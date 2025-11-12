@@ -1,0 +1,391 @@
+Started GET "/" for 172.20.0.1 at 2025-11-11 16:53:46 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) /*application='ChatSystem'*/[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL) /*application='ChatSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='ChatSystem'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-8.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-8.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 3.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('6014075615167554690', 0) /*application='ChatSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='ChatSystem'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1 /*application='ChatSystem'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (7.8ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2025-11-11 17:05:15.325527', '2025-11-11 17:05:15.325529') /*application='ChatSystem'*/[0m
+Migrating to CreateApplications (20251111170014)
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE `applications` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `token` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL) /*application='ChatSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20251111170014') /*application='ChatSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('6014075615167554690') /*application='ChatSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='ChatSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('6014075615167554690', 0) /*application='ChatSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='ChatSystem'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1 /*application='ChatSystem'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('6014075615167554690') /*application='ChatSystem'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='ChatSystem'*/[0m
+Started GET "/" for 172.20.0.1 at 2025-11-11 17:20:10 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='ChatSystem'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/bundle/gems/railties-8.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-8.1.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/applications" for 172.20.0.1 at 2025-11-11 17:20:42 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationsController#create as */*
+  Parameters: {"name"=>"App1", "application"=>{"name"=>"App1"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Content in 0ms (ActiveRecord: 3.9ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (8.1.1) lib/action_controller/metal/request_forgery_protection.rb:321:in `handle_unverified_request'
+actionpack (8.1.1) lib/action_controller/metal/request_forgery_protection.rb:415:in `handle_unverified_request'
+actionpack (8.1.1) lib/action_controller/metal/request_forgery_protection.rb:404:in `verify_authenticity_token'
+activesupport (8.1.1) lib/active_support/callbacks.rb:362:in `block in make_lambda'
+activesupport (8.1.1) lib/active_support/callbacks.rb:179:in `block in call'
+actionpack (8.1.1) lib/abstract_controller/callbacks.rb:36:in `block (2 levels) in <module:Callbacks>'
+activesupport (8.1.1) lib/active_support/callbacks.rb:180:in `call'
+activesupport (8.1.1) lib/active_support/callbacks.rb:560:in `block in invoke_before'
+activesupport (8.1.1) lib/active_support/callbacks.rb:560:in `each'
+activesupport (8.1.1) lib/active_support/callbacks.rb:560:in `invoke_before'
+activesupport (8.1.1) lib/active_support/callbacks.rb:119:in `block in run_callbacks'
+activesupport (8.1.1) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (8.1.1) lib/abstract_controller/callbacks.rb:266:in `process_action'
+actionpack (8.1.1) lib/action_controller/metal/rescue.rb:36:in `process_action'
+actionpack (8.1.1) lib/action_controller/metal/instrumentation.rb:76:in `block in process_action'
+activesupport (8.1.1) lib/active_support/notifications.rb:210:in `block in instrument'
+activesupport (8.1.1) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (8.1.1) lib/active_support/notifications.rb:210:in `instrument'
+actionpack (8.1.1) lib/action_controller/metal/instrumentation.rb:75:in `process_action'
+actionpack (8.1.1) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (8.1.1) lib/active_record/railties/controller_runtime.rb:39:in `process_action'
+actionpack (8.1.1) lib/abstract_controller/base.rb:154:in `process'
+actionview (8.1.1) lib/action_view/rendering.rb:40:in `process'
+actionpack (8.1.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (8.1.1) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (8.1.1) lib/action_dispatch/routing/route_set.rb:65:in `dispatch'
+actionpack (8.1.1) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:35:in `block in serve'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:86:in `block in recognize'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:66:in `each'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:66:in `recognize'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:31:in `serve'
+actionpack (8.1.1) lib/action_dispatch/routing/route_set.rb:906:in `call'
+railties (8.1.1) lib/rails/engine/lazy_route_set.rb:60:in `call'
+rack (3.2.4) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.2.4) lib/rack/etag.rb:29:in `call'
+rack (3.2.4) lib/rack/conditional_get.rb:44:in `call'
+rack (3.2.4) lib/rack/head.rb:15:in `call'
+actionpack (8.1.1) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/cookies.rb:708:in `call'
+activerecord (8.1.1) lib/active_record/migration.rb:671:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.1.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (8.1.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.1) lib/rails/rack/logger.rb:29:in `call'
+propshaft (1.3.1) lib/propshaft/quiet_assets.rb:11:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.4) lib/rack/method_override.rb:28:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/executor.rb:20:in `call'
+propshaft (1.3.1) lib/propshaft/server.rb:37:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.1) lib/rails/engine.rb:534:in `call'
+puma (7.1.0) lib/puma/configuration.rb:300:in `call'
+puma (7.1.0) lib/puma/request.rb:101:in `block in handle_request'
+puma (7.1.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.1.0) lib/puma/request.rb:100:in `handle_request'
+puma (7.1.0) lib/puma/server.rb:503:in `process_client'
+puma (7.1.0) lib/puma/server.rb:262:in `block in run'
+puma (7.1.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Started POST "/applications" for 172.20.0.1 at 2025-11-11 17:24:07 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationsController#create as */*
+  Parameters: {"name"=>"App1", "application"=>{"name"=>"App1"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='create',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:8:in `create'
+  [1m[36mApplication Create (1.1ms)[0m  [1m[32mINSERT INTO `applications` (`name`, `token`, `created_at`, `updated_at`) VALUES ('App1', 'a2dbca3c7df767b1e438c73e8df7318e', '2025-11-11 17:24:07.979013', '2025-11-11 17:24:07.979013') /*action='create',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT /*action='create',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:8:in `create'
+Completed 201 Created in 17ms (Views: 0.3ms | ActiveRecord: 4.8ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started POST "/applications" for 172.20.0.1 at 2025-11-11 17:24:49 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationsController#create as */*
+  Parameters: {"name"=>"App1", "application"=>{"name"=>"App1"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='create',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:8:in `create'
+  [1m[36mApplication Create (0.8ms)[0m  [1m[32mINSERT INTO `applications` (`name`, `token`, `created_at`, `updated_at`) VALUES ('App1', '541bb76c653fdc6fed600bbcdf8d3eff', '2025-11-11 17:24:49.614607', '2025-11-11 17:24:49.614607') /*action='create',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT /*action='create',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:8:in `create'
+Completed 201 Created in 6ms (Views: 0.1ms | ActiveRecord: 4.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/applications" for 172.20.0.1 at 2025-11-11 17:30:25 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationsController#index as */*
+  Parameters: {"name"=>"App1", "application"=>{"name"=>"App1"}}
+  [1m[36mApplication Load (1.1ms)[0m  [1m[34mSELECT `applications`.`name`, `applications`.`token` FROM `applications` /*action='index',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/applications" for 172.20.0.1 at 2025-11-11 17:33:44 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationsController#index as */*
+  Parameters: {"name"=>"App1", "application"=>{"name"=>"App1"}}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT `applications`.`name`, `applications`.`token` FROM `applications` /*action='index',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/applications" for 172.20.0.1 at 2025-11-11 17:33:45 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationsController#index as */*
+  Parameters: {"name"=>"App1", "application"=>{"name"=>"App1"}}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT `applications`.`name`, `applications`.`token` FROM `applications` /*action='index',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/applications" for 172.20.0.1 at 2025-11-11 17:34:23 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationsController#index as */*
+  Parameters: {"name"=>"App1", "application"=>{"name"=>"App1"}}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT `applications`.* FROM `applications` /*action='index',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 3.8ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/applications" for 172.20.0.1 at 2025-11-11 17:35:44 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationsController#index as */*
+  Parameters: {"name"=>"App1", "application"=>{"name"=>"App1"}}
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT `applications`.* FROM `applications` /*action='index',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 2.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/applications" for 172.20.0.1 at 2025-11-11 17:35:46 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationsController#index as */*
+  Parameters: {"name"=>"App1", "application"=>{"name"=>"App1"}}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT `applications`.* FROM `applications` /*action='index',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/applications" for 172.20.0.1 at 2025-11-11 17:36:20 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationsController#index as */*
+  Parameters: {"name"=>"App1", "application"=>{"name"=>"App1"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 1.7ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+NameError (uninitialized constant ApplicationsController::ApplicationSerializer):
+  
+app/controllers/applications_controller.rb:6:in `index'
+Started GET "/applications" for 172.20.0.1 at 2025-11-11 17:38:16 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (4.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC /*application='ChatSystem'*/[0m
+Processing by ApplicationsController#index as */*
+  Parameters: {"name"=>"App1", "application"=>{"name"=>"App1"}}
+[active_model_serializers] Rendered ApplicationSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 3.0ms (0 queries, 0 cached) | GC: 22.1ms)
+
+
+  
+NoMethodError (undefined method `model_name' for NilClass:Class):
+  
+app/controllers/applications_controller.rb:6:in `index'
+Started GET "/applications" for 172.20.0.1 at 2025-11-11 17:38:56 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationsController#index as */*
+  Parameters: {"name"=>"App1", "application"=>{"name"=>"App1"}}
+[active_model_serializers] Rendered ApplicationSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+NoMethodError (undefined method `model_name' for NilClass:Class):
+  
+app/controllers/applications_controller.rb:6:in `index'
+Started POST "/applications" for 172.20.0.1 at 2025-11-11 17:39:39 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationsController#create as */*
+  Parameters: {"name"=>"App1", "application"=>{"name"=>"App1"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:13:in `create'
+  [1m[36mApplication Create (2.1ms)[0m  [1m[32mINSERT INTO `applications` (`name`, `token`, `created_at`, `updated_at`) VALUES ('App1', '3d64f8a4ab83338ed674da31e3752e0e', '2025-11-11 17:39:39.321526', '2025-11-11 17:39:39.321526') /*action='create',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[35mCOMMIT /*action='create',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:13:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 201 Created in 22ms (Views: 4.8ms | ActiveRecord: 10.8ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/applications" for 172.20.0.1 at 2025-11-11 17:39:45 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationsController#index as */*
+[active_model_serializers] Rendered ApplicationSerializer with ActiveModelSerializers::Adapter::Attributes (0.2ms)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+NoMethodError (undefined method `model_name' for NilClass:Class):
+  
+app/controllers/applications_controller.rb:6:in `index'
+Started GET "/applications" for 172.20.0.1 at 2025-11-11 17:40:50 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationsController#index as */*
+  [1m[36mApplication Load (0.4ms)[0m  [1m[34mSELECT `applications`.* FROM `applications` /*action='index',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+Completed 200 OK in 8ms (Views: 3.8ms | ActiveRecord: 2.4ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/applications" for 172.20.0.1 at 2025-11-11 17:49:09 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationsController#index as */*
+  [1m[36mApplication Load (1.0ms)[0m  [1m[34mSELECT `applications`.* FROM `applications` /*action='index',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.19ms)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started PUT "/applications/3d64f8a4ab83338ed674da31e3752e0e" for 172.20.0.1 at 2025-11-11 17:49:51 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationsController#update_by_token as */*
+  Parameters: {"name"=>"app 3", "token"=>"[FILTERED]", "application"=>{"name"=>"app 3"}}
+  [1m[36mApplication Load (0.4ms)[0m  [1m[34mSELECT `applications`.* FROM `applications` WHERE `applications`.`token` = '3d64f8a4ab83338ed674da31e3752e0e' LIMIT 1 /*action='update_by_token',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:21:in `update_by_token'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='update_by_token',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:25:in `update_by_token'
+  [1m[36mApplication Update (0.9ms)[0m  [1m[33mUPDATE `applications` SET `applications`.`name` = 'app 3', `applications`.`updated_at` = '2025-11-11 17:49:51.053045' WHERE `applications`.`id` = 3 /*action='update_by_token',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:25:in `update_by_token'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT /*action='update_by_token',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:25:in `update_by_token'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 12ms (Views: 1.0ms | ActiveRecord: 2.8ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started PUT "/applications/3d64f8a4ab83338ed674da31e3752e0e" for 172.20.0.1 at 2025-11-11 17:51:43 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ArgumentError (Reported error must be an Exception, got: #<SyntaxError:"/chat_system/app/controllers/applications_controller.rb:27: syntax error, unexpected label, expecting '}'\n...      application: application: ActiveModelSerializers::Seri...\n...                   ^~~~~~~~~~~~\n">)
+Caused by: SyntaxError (/chat_system/app/controllers/applications_controller.rb:27: syntax error, unexpected label, expecting '}'
+...      application: application: ActiveModelSerializers::Seri...
+...                   ^~~~~~~~~~~~
+)
+
+Information for: ArgumentError (Reported error must be an Exception, got: #<SyntaxError:"/chat_system/app/controllers/applications_controller.rb:27: syntax error, unexpected label, expecting '}'\n...      application: application: ActiveModelSerializers::Seri...\n...                   ^~~~~~~~~~~~\n">):
+  
+activesupport (8.1.1) lib/active_support/error_reporter.rb:235:in `report'
+actionpack (8.1.1) lib/action_dispatch/middleware/executor.rb:36:in `rescue in call'
+actionpack (8.1.1) lib/action_dispatch/middleware/executor.rb:32:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.1) lib/rails/rack/logger.rb:29:in `call'
+propshaft (1.3.1) lib/propshaft/quiet_assets.rb:11:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.4) lib/rack/method_override.rb:28:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/executor.rb:20:in `call'
+propshaft (1.3.1) lib/propshaft/server.rb:37:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.1) lib/rails/engine.rb:534:in `call'
+puma (7.1.0) lib/puma/configuration.rb:300:in `call'
+puma (7.1.0) lib/puma/request.rb:101:in `block in handle_request'
+puma (7.1.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.1.0) lib/puma/request.rb:100:in `handle_request'
+puma (7.1.0) lib/puma/server.rb:503:in `process_client'
+puma (7.1.0) lib/puma/server.rb:262:in `block in run'
+puma (7.1.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+
+Information for cause: SyntaxError (/chat_system/app/controllers/applications_controller.rb:27: syntax error, unexpected label, expecting '}'
+...      application: application: ActiveModelSerializers::Seri...
+...                   ^~~~~~~~~~~~
+):
+  
+app/controllers/applications_controller.rb:27: syntax error, unexpected label, expecting '}'
+Started PUT "/applications/3d64f8a4ab83338ed674da31e3752e0e" for 172.20.0.1 at 2025-11-11 17:52:50 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationsController#update_by_token as */*
+  Parameters: {"name"=>"app 3", "token"=>"[FILTERED]", "application"=>{"name"=>"app 3"}}
+  [1m[36mApplication Load (0.4ms)[0m  [1m[34mSELECT `applications`.* FROM `applications` WHERE `applications`.`token` = '3d64f8a4ab83338ed674da31e3752e0e' LIMIT 1 /*action='update_by_token',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:21:in `update_by_token'
+[active_model_serializers] Rendered ApplicationSerializer with ActiveModelSerializers::Adapter::Attributes (0.1ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.58ms)
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 3.0ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started POST "/applications" for 172.20.0.1 at 2025-11-11 17:54:17 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationsController#create as */*
+  Parameters: {"name"=>"App1", "application"=>{"name"=>"App1"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='create',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:13:in `create'
+  [1m[36mApplication Create (0.9ms)[0m  [1m[32mINSERT INTO `applications` (`name`, `token`, `created_at`, `updated_at`) VALUES ('App1', 'f8dead5815c603ce926d2704be4687c6', '2025-11-11 17:54:17.413651', '2025-11-11 17:54:17.413651') /*action='create',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT /*action='create',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:13:in `create'
+[active_model_serializers] Rendered ApplicationSerializer with ActiveModelSerializers::Adapter::Attributes (0.1ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.53ms)
+Completed 201 Created in 7ms (Views: 1.3ms | ActiveRecord: 5.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PUT "/applications/f8dead5815c603ce926d2704be4687c6" for 172.20.0.1 at 2025-11-11 17:54:38 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ApplicationsController#update_by_token as */*
+  Parameters: {"name"=>"app 4", "token"=>"[FILTERED]", "application"=>{"name"=>"app 4"}}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT `applications`.* FROM `applications` WHERE `applications`.`token` = 'f8dead5815c603ce926d2704be4687c6' LIMIT 1 /*action='update_by_token',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:24:in `update_by_token'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='update_by_token',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:28:in `update_by_token'
+  [1m[36mApplication Update (1.1ms)[0m  [1m[33mUPDATE `applications` SET `applications`.`name` = 'app 4', `applications`.`updated_at` = '2025-11-11 17:54:38.299955' WHERE `applications`.`id` = 4 /*action='update_by_token',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:28:in `update_by_token'
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[35mCOMMIT /*action='update_by_token',application='ChatSystem',controller='applications'*/[0m
+  ↳ app/controllers/applications_controller.rb:28:in `update_by_token'
+[active_model_serializers] Rendered ApplicationSerializer with ActiveModelSerializers::Adapter::Attributes (0.15ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.35ms)
+Completed 200 OK in 13ms (Views: 0.7ms | ActiveRecord: 9.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
