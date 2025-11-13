@@ -15,8 +15,8 @@ Implementation for how a simple chat system could work .
 
 You should have docker and docker compose  installed.  
 ```
-    Docker compose build
-    Docker compose up
+    docker compose build
+    docker compose up
 ```
 
 
@@ -58,7 +58,7 @@ That is an overhead to the system.
 
 2- Create an hourly cron job that executes a rake  
 this rake should be responsible on reading all existing redis chat and message counters   
-`chat_counter_app_{app_id}`  `message_counter_chat_{app_id}`  
+`chat_counter_app_{app_id}`  `message_counter_chat_{chat_id}`  
 and then it should send two bulk update requests one to update the chats_count inside applications table. and the other for the messages_count inside chats table.  
 
 
